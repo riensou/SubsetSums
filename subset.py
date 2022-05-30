@@ -74,3 +74,6 @@ def plotConjecture(n, kMax):
 
 
 plotBoth(9, 9)
+
+
+#testing testing testing
