@@ -1,3 +1,4 @@
+from xml.etree.ElementTree import tostring
 import matplotlib.pyplot as plt
 import numpy as np
 import math
@@ -56,6 +57,7 @@ def plotBoth(n, kMax):
 
     plt.xlabel('k')
     plt.ylabel('number of subsets divisible by k')
+    plt.title("n = " + str(n))
 
     plt.show()
 
@@ -65,10 +67,10 @@ def plotSample(n, kMax):
     plt.plot([x for x in range(kMax + 1)][1:], [subsetsDivisible(n, x) for x in range(kMax + 1)[1:]])
 
 def plotConjecture(n, kMax):
-    #plt.plot([x for x in range(kMax + 1)][1:], 
-    #            [(1 / x) * (2 ** n + (2 ** math.floor(n / x)) * (max(x - 2 ** (n % x), 1))) for x in range(kMax + 1)[1:]])
+    plt.plot([x for x in range(kMax + 1)][1:], 
+                [(1 / x) * (2 ** n + (2 ** math.floor(n / x)) * (max(x - 2 ** (n % x), 1))) for x in range(kMax + 1)[1:]])
     plt.plot([x for x in range(kMax + 1)][1:], 
                 [(1 / x) * (2 ** n + (2 ** math.floor(n / x)) * (x - 2 ** (n % x))) for x in range(kMax + 1)[1:]])
 
 
-plotBoth(50, 50)
+plotBoth(9, 9)
