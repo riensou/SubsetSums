@@ -3,20 +3,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 import csv
+import pickle
 from itertools import combinations
 
 dict_subsets = {}
-
-reader = csv.reader(open('data/dict_subsets1.csv', 'r'))
-for row in reader:
-   k, v = row
-   dict_subsets[k] = v
-reader = csv.reader(open('data/dict_subsets2.csv', 'r'))
-for row in reader:
-   k, v = row
-   dict_subsets[k] = v
-
-print(dict_subsets)
+with open("data/dict_subsets.pickle", "rb") as infile:
+    dict_subsets = pickle.load(infile)
 
 def generateSubsets(n):
     """Returns a list of subsets of the set {1, 2, 3, ..., n}.
@@ -45,7 +37,9 @@ def generateSubsets(n):
 
     return subsets
 
-
+def clear_dict_subsets():
+    global dict_subsets
+    dict_subsets = {}
 
 def subsetsDivisible(n, k):
     """Returns the number of subsets of the set {1, 2, 3, ..., n} that
