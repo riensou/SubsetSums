@@ -7,8 +7,8 @@ import pickle
 from itertools import combinations
 
 dict_subsets = {}
-with open("data/dict_subsets.pickle", "rb") as infile:
-    dict_subsets = pickle.load(infile)
+#with open("data/dict_subsets.pickle", "rb") as infile:
+#    dict_subsets = pickle.load(infile)
 
 def generateSubsets(n):
     """Returns a list of subsets of the set {1, 2, 3, ..., n}.
