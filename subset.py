@@ -2,10 +2,21 @@ from xml.etree.ElementTree import tostring
 import matplotlib.pyplot as plt
 import numpy as np
 import math
-
+import csv
 from itertools import combinations
 
 dict_subsets = {}
+
+reader = csv.reader(open('data/dict_subsets1.csv', 'r'))
+for row in reader:
+   k, v = row
+   dict_subsets[k] = v
+reader = csv.reader(open('data/dict_subsets2.csv', 'r'))
+for row in reader:
+   k, v = row
+   dict_subsets[k] = v
+
+print(dict_subsets)
 
 def generateSubsets(n):
     """Returns a list of subsets of the set {1, 2, 3, ..., n}.
