@@ -10,4 +10,4 @@ My method of proving this is using generating functions and the roots of unity, 
 
 
 
-I also added a small neural network that attempted to 'learn' the answers, however this proved to computationally inefficient.
+I also added a small neural network that attempted to 'learn' the answers, however this proved to be too computationally inefficient.
